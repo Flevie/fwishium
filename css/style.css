@@ -16,31 +16,34 @@
 }
 
 :root{
-  --gradient-dark: rgba(120,182,247,.3);
-  --gradient-light: rgba(40,92,212,.3);
+  --gradient-dark: rgba(106, 163, 218,1);
+  --gradient-light: rgba(160, 202,247,1);
   --navbar-border: rgba(10,62,182,.3);
   --primary-borders: rgba(10,62,182,.7);
-  --marquee-cr: rgb(255,255,255,.1);
+  --marquee-cr: rgb(255,255,255,1);
   
   --main-bg: rgb(20,20,20);
   --text-cr: rgba(255,255,255,1);
-  --h1-shadow: rgba(80,132,252,1);
+  --h1-shadow: rgba(255,255,255,1);
   
-  --a-cr: rgba(80,132,252,1);
-  --a-shadow: rgba(80,132,252,1);
+  --a-cr: rgba(100,152,252,1);
+  --a-shadow: rgba(255,255,255,1);
+  --a-hover-shadow: rgba(80,132,252,1);
   
-  --article-bg: rgba(40,92,212,.1);
+  --article-dark: rgba(10,10,10,.1);
+  --article-light: rgba(50,50,120,.1);
+  --article-border: rgba(100,100,255,.4);
   
-  --footer-cr: rgba(255,255,255,.5);
+  --footer-cr: rgba(255,255,255,.8);
   
-  --repo-shadow: rgba(10,62,182,1);
+  --repo-shadow: rgba(80,132,252,.5);
 }
 
 body{
   background: #000000;
-  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 50, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
-  background: -o-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 50, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
-  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 50, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  background: -webkit-linear-gradient(left, var(--gradient-dark) 0%, var(--gradient-light) 50%, var(--gradient-dark) 100%);
+  background: -o-linear-gradient(left, var(--gradient-dark) 0%, var(--gradient-light) 50%, var(--gradient-dark) 100%);
+  background: linear-gradient(to right, var(--gradient-dark) 0%, var(--gradient-light) 50%, var(--gradient-dark) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
 }
 h1{
@@ -48,12 +51,14 @@ h1{
 }
 a{
   color: var(--a-cr);
+  text-shadow: -1px .5px 0px var(--a-shadow);
   text-decoration: none;
   transition: all .3s ease;
   font-weight: bold;
 }
 a:hover{
-  text-shadow: 0px 0px 10px var(--a-shadow);
+  text-shadow: -1px .5px 0px var(--a-hover-shadow);
+  color:var(--text-cr);
 }
 .navbar{
   display:block;
@@ -65,7 +70,7 @@ a:hover{
 
 marquee{
   margin:.5em;
-  border-radius:20px;
+  border-radius:50px;
   width:50%;
   height:auto;
   background: #285CD4;
@@ -77,14 +82,12 @@ marquee{
   direction:left;
   scrollamount: 10;
   color:var(--marquee-cr);
+  border: var(--article-border) solid 3px;
 }
 marquee p{
   font-size:1.5rem;
   font-family: Arial, sans-serif;
   padding:.2em;
-}
-marquee span{
-  font-family:headFont, Arial, sans-serif;
 }
 
 .hero-background{
@@ -95,9 +98,10 @@ marquee span{
   background-size: cover;
   */
   background: #000000;
-  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 50, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
-  background: -o-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 50, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
-  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 50, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  background: -webkit-linear-gradient(left, var(--gradient-dark) 0%, var(--gradient-light) 50%, var(--gradient-dark) 100%);
+  background: -o-linear-gradient(left, var(--gradient-dark) 0%, var(--gradient-light) 50%, var(--gradient-dark) 100%);
+  background: linear-gradient(to right, var(--gradient-dark) 0%, var(--gradient-light) 50%, var(--gradient-dark) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
   position: relative;
   height:35vh;
   width:100%;
@@ -183,7 +187,7 @@ body.scrolled .header-logo{
   left:4.5em;
   right:auto;
   transform:none;
-  opacity:.3;
+  opacity:1;
 }
 
 body.scrolled .header-logo img{
@@ -194,7 +198,7 @@ body.scrolled .header-logo2{
   left:2em;
   right:auto;
   transform:none;
-  opacity:.3;
+  opacity:1;
 }
 
 body.scrolled .header-logo2 img{
@@ -215,10 +219,16 @@ main .container{
 }
 .container article{
   display:block;
-  background: var(--article-bg);
+  background: #000000;
+  background: -webkit-linear-gradient(left, var(--article-dark) 0%, var(--article-light) 50%, var(--article-dark) 100%);
+  background: -o-linear-gradient(left, var(--article-dark) 0%, var(--article-light) 50%, var(--article-dark) 100%);
+  background: linear-gradient(to right, var(--article-dark) 0%, var(--article-light) 50%, var(--article-dark) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
   width:100%;
   height:auto;
   border-radius: 20px;
+  padding:1em;
+  border: var(--article-border) outset 3px;
 }
 article h1{
   text-align: center;
