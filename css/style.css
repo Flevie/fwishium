@@ -86,22 +86,62 @@ marquee span{
 }
 
 .hero-background{
+  /*
   background-image:url("../cdn/hero_background.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  */
+  background: #000000;
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 50, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 1) 0%, rgba(0, 50, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 50, 125, 1) 50%, rgba(0, 0, 0, 1) 100%);
   position: relative;
   height:35vh;
   width:100%;
-  border-bottom: var(--navbar-border) solid 4px;
 }
 .header-logo{
+  position:fixed;
+  top:6vh;
+  left:50%;
+  transform:translateX(-50%);
   display:flex;
-  justify-content: center;
-  padding:4em;
+  justify-content:center;
+  align-items:center;
+  z-index:200;
+  transition: all .45s cubic-bezier(.22,.61,.36,1);
 }
+@media(max-width:500px){
+  .hero-background{
+    height:25vh;
+  }
+  .header-logo img{
+    width: 20em;
+  }
+  main .container{
+    max-width:50%;
+    padding:0;
+    margin:0;
+  }
+  .container article{
+    width:40%;
+  }
+}
+
 .header-logo img{
-  max-width: 30em;
+  max-width:30em;
+  transition: all .45s cubic-bezier(.22,.61,.36,1);
+}
+
+body.scrolled .header-logo{
+  top:1em;
+  left:2em;
+  right:auto;
+  transform:none;
+}
+
+body.scrolled .header-logo img{
+  max-width:10em;
 }
 
 main{
