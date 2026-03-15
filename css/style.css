@@ -111,12 +111,27 @@ marquee span{
   z-index:200;
   transition: all .45s cubic-bezier(.22,.61,.36,1);
 }
+.header-logo2{
+  opacity:0;
+  position:fixed;
+  top:6vh;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:200;
+  transition: all .45s cubic-bezier(.22,.61,.36,1);
+}
 @media(max-width:500px){
   .hero-background{
     height:25vh;
   }
   .header-logo img{
     width: 20em;
+  }
+  .header-logo2 img{
+    width:10em;
   }
   main .container{
     max-width:50%;
@@ -132,6 +147,9 @@ marquee span{
   max-width:30em;
   transition: all .45s cubic-bezier(.22,.61,.36,1);
 }
+.header-logo2 img{
+  max-width:10em;
+}
 
 body.scrolled .header-logo{
   top:1em;
@@ -142,6 +160,17 @@ body.scrolled .header-logo{
 
 body.scrolled .header-logo img{
   max-width:10em;
+}
+body.scrolled .header-logo2{
+  top:4em;
+  left:2em;
+  right:auto;
+  transform:none;
+  opacity:1;
+}
+
+body.scrolled .header-logo2 img{
+  max-width:8em;
 }
 
 main{
